@@ -1,0 +1,19 @@
+<div>
+  <form>
+    Limit: <input type="text" id="limit">
+    Reverse: <input type="checkbox" id="rev">
+    <select id="god" (change)="filter()"><option selected="selected">SVI</option></select>
+    <button id="ucitaj" class="btn btn-success" (click)="getData()">Učitaj filmove</button>
+    <button id ="osvjezi" class="btn btn-success" (click)="filter()">Osvježi</button>
+  </form><br>
+  <button class="btn btn-success" id="novi_film" onclick="document.forms[1].style.display='block'">Dodaj</button>
+  <form id="forma-dodaj">
+    <input type="text" class="dodaj" placeholder="Naslov" id="d1">
+    <input type="text" class="dodaj" placeholder="Rating" id="d2">
+    <button id="dodaj-film" class="btn btn-success" (click)="dodaj_film()">Dodaj</button>
+    <br>
+    <input type="text" class="dodaj" placeholder="Godina" id="d3">
+    <input type="text" class="dodaj" placeholder="url postera" id="d4">
+  </form>
+  <div id="filmovi"></div>
+</div>

@@ -1,0 +1,14 @@
+ div {
+   display: inline-block; border: 2px solid red; padding: 10px; margin: 4px
+ }
+
+ .kod {
+   max-height: 35vh;
+   white-space: pre-wrap;
+   overflow: scroll;
+   overflow-x: hidden;
+ }
+
+::-webkit-scrollbar {
+   width: 3px;
+ }
