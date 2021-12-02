@@ -1,0 +1,6 @@
+select {
+  min-width: 80px;
+}
+.pocrveni{
+  border: 1px solid red !important;
+}

@@ -1,0 +1,27 @@
+
+<div id="komentari">
+  <h3 style="margin-left: 10px">Broj objava: {{komentari.length}}</h3>
+  <div class="well well-lg" style="width:800px" *ngFor="let komentar of komentari; let i = index">
+    By {{komentar.autor}} at {{komentar.vrijeme.toLocaleString('hr-HR').slice(0,-3)}}<hr>
+
+    <div *ngIf="izmjena[i]">
+      <textarea style="display: block; min-height: 60px" [(ngModel)]="kom[i]"></textarea><hr>
+      <button class="btn btn-info" (click)="spremi(i)">Izmjeni</button>
+    </div>
+
+    <div *ngIf="!izmjena[i]">
+      <p style="display: block; min-height: 60px">{{komentar.komentar}}</p><hr>
+      <button class="btn btn-warning" (click)="obrisiKom(i)">Obriši</button>
+      <button class="btn btn-info" (click)="izmjeniKom(i)">Izmjeni</button>
+    </div>
+  </div>
+</div>
+
+<button class="btn" (click)="pokazi=!pokazi; gumb=pokazi ? 'Zatvori' : 'Novi komentar'">{{gumb}}</button>
+
+<div class="well well-lg" style="width: 800px" [hidden]="!pokazi">
+  <span>Autor:<br> <input type="text" [(ngModel)]="new.autor"><br></span>
+  <span>Komentar:<br> <textarea cols="40" rows="8" [(ngModel)]="new.komentar"></textarea><br></span>
+  <button class="btn" (click)="add()" [disabled]="new.komentar.length==0" [ngClass]="new.komentar.length==0 ? 'btn-danger' : 'btn-success'">Pošalji</button>
+</div>
+
