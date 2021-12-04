@@ -6,13 +6,16 @@ import { AppComponent } from './app.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {FormsModule} from "@angular/forms";
 import {PocetakComponent} from "./pocetak/pocetak.component";
-import {SortingPipe} from "./pocetak/sorting.pipe";
-import {FilterPipe} from "./pocetak/filter.pipe";
 import {Z1Component} from "./zadatak/z1/z1.component";
 import {Z2Component} from "./zadatak/z2/z2.component";
 import {Z3Component} from "./zadatak/z3/z3.component";
 import {Z1_1Component} from "./zadatak/z1/z1_1/z1_1.component";
 import {D1Component} from "./zadatak/d1/d1.component";
+import { SerijaComponent } from './zadatak/d1/serija.component';
+import { SorterPipe } from './zadatak/z4/sorter.pipe';
+import {Z4Component} from "./zadatak/z4/Z4.component";
+import {Z4detaljiComponent} from "./zadatak/z4/Z4detalji.component";
+import {FilterPipe} from "./zadatak/z4/filter.pipe";
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import {D1Component} from "./zadatak/d1/d1.component";
     Z3Component,
     D1Component,
     Z1_1Component,
-    SortingPipe,
+    SerijaComponent,
+    Z4Component,
+    Z4detaljiComponent,
+    SorterPipe,
     FilterPipe
   ],
   imports: [
