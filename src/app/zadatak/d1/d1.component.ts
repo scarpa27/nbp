@@ -76,9 +76,6 @@ export class D1Component implements OnInit {
       }
     })
 
-
-    // console.log(arr.toString());
-
     return  arr.toString();
 
 

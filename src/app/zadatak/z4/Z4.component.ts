@@ -10,7 +10,6 @@ export class Z4Component implements OnInit {
   filt : any;
   stupac : string = "";
   obrnuto: boolean=false;
-  // studenti:any;
 
   studenti = [
     {ime: "Toni", jmbag:"0082058337", ects:122, prosjek:3.7},
@@ -28,7 +27,6 @@ export class Z4Component implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
   }
 
   sortiranje(stup:string) : void {

@@ -18,6 +18,4 @@ export class PocetakComponent implements OnInit {
 
   ngOnInit() {
   }
-
-
 }

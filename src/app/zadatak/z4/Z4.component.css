@@ -8,6 +8,10 @@ table {
   border: 1px solid black;
 }
 
+#prvired {
+  font-weight: bold;
+}
+
 input {
 
 }
