@@ -16,6 +16,8 @@ import { SorterPipe } from './zadatak/z4/sorter.pipe';
 import {Z4Component} from "./zadatak/z4/Z4.component";
 import {Z4detaljiComponent} from "./zadatak/z4/Z4detalji.component";
 import {FilterPipe} from "./zadatak/z4/filter.pipe";
+import { SortPipe } from './zadatak/d1/sort.pipe';
+import { FiltPipe } from './zadatak/d1/filt.pipe';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import {FilterPipe} from "./zadatak/z4/filter.pipe";
     Z4Component,
     Z4detaljiComponent,
     SorterPipe,
-    FilterPipe
+    FilterPipe,
+    SortPipe,
+    FiltPipe
   ],
   imports: [
     BrowserModule,

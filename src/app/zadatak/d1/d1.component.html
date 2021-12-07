@@ -1,15 +1,20 @@
-<!--<table class='table table-striped'>-->
-<!--  <tr>-->
-<!--    <td>Ime</td>-->
-<!--    <td>Žanrovi</td>-->
-<!--    <td>Ocjena</td>-->
-<!--    <td>Ocjena 🔝;</td>-->
-<!--  </tr>-->
-<!--  <tr *ngFor="let serija of serije | sorting : 'id'">-->
-<!--    <td><button>{{serija.name}}</button></td>-->
-<!--    <td>{{serija.genres.toString().replace(",",", ")}}</td>-->
-<!--    <td>{{prosjek(serija.name)}}</td>-->
-<!--    <td>{{serija.seasons[0].rating}}</td>-->
-<!--  </tr>-->
-
-<!--</table>-->
+<div id="serije">
+  <select (change)="filter()" [(ngModel)]="zanr">
+    <option selected="selected"></option>
+    <option *ngFor="let zan of zanrovi">{{zan}}</option>
+  </select>
+  <table class="table table-striped">
+    <tr>
+      <td (click)="sortiranje('name')">Ime</td>
+      <td >Žanrovi</td>
+      <td (click)="sortiranje('avg')">Rating</td>
+      <td (click)="sortiranje('top')">Rating TOP</td>
+    </tr>
+    <tr *ngFor="let serija of serije   | sort : stupac : obrnuto | filt : zanr ">
+      <td><a [routerLink]="[serija.id]">{{serija.name}}</a></td>
+      <td>{{serija.genres.toString()}}</td>
+      <td>{{serija.avg.toFixed(2)}}</td>
+      <td>{{serija.top}}</td>
+    </tr>
+  </table>
+</div>

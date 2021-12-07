@@ -9,6 +9,11 @@ import {ifStmt} from "@angular/compiler/src/output/output_ast";
 })
 export class D1Component implements OnInit {
 
+  filt : any;
+  stupac : string = "";
+  obrnuto : boolean = false;
+  zanr : string = "";
+
   serije = [
     {id:1, name:"The Wire", genres:['Crime', 'Drama', 'Thriller'], seasons:[
         {number:1, rating:8.4},
@@ -52,32 +57,25 @@ export class D1Component implements OnInit {
       ]},
   ];
 
-  constructor() {}
+  zanrovi : Set<string> = new Set;
+
+  constructor() {
+    this.serije.forEach(ser => ser.genres.forEach(zanr => this.zanrovi.add(zanr)));
+  }
   ngOnInit() {}
 
-  prosjek (ime:string) : number {
-    let avg : number = 0;
-    this.serije.forEach(serija => function () {
-      if (serija.name === ime) {
-        avg = serija.seasons.map(ocj => ocj.rating).reduce((n1,n2) => (n1+n2))/serija.seasons.length;
-      }
-    });
-    return avg;
+  sortiranje(stup:string) : void {
+    if (stup === this.stupac) {
+      this.obrnuto = !this.obrnuto;
+    }
+    else {
+      this.obrnuto = false;
+      this.stupac = stup;
+    }
   }
 
-  testi () : string {
-
-    let arr: number[] = [];
-
-    this.serije.forEach(serija => function () {
-      if (serija.name === "The Wire") {
-        console.log("žica");
-        arr = serija.seasons.map(sezona => sezona.rating);
-      }
-    })
-
-    return  arr.toString();
-
+  filter() : void {
 
   }
+
 }
