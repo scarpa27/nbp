@@ -9,6 +9,7 @@ import {D1Component} from "./zadatak/d1/d1.component";
 import {SerijaComponent} from "./zadatak/d1/serija.component";
 import {Z4Component} from "./zadatak/z4/Z4.component";
 import {Z4detaljiComponent} from "./zadatak/z4/Z4detalji.component";
+import {PloviloComponent} from "./plovilo/plovilo/plovilo.component";
 
 const routes : Route[] = [
     {path:'',component:PocetakComponent},
@@ -19,7 +20,11 @@ const routes : Route[] = [
   {path:'d1/:id',component:SerijaComponent},
   {path:'z1/z1_1',component:Z1_1Component},
   {path:'z4',component:Z4Component},
-  {path:'z4/:jmbag',component:Z4detaljiComponent}
+  {path:'z4/:jmbag',component:Z4detaljiComponent},
+
+  {path:'plovilo',component:PloviloComponent}
+
+
 ];
 
 @NgModule({

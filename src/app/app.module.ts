@@ -18,6 +18,7 @@ import {Z4detaljiComponent} from "./zadatak/z4/Z4detalji.component";
 import {FilterPipe} from "./zadatak/z4/filter.pipe";
 import { SortPipe } from './zadatak/d1/sort.pipe';
 import { FiltPipe } from './zadatak/d1/filt.pipe';
+import { PloviloComponent } from './plovilo/plovilo/plovilo.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { FiltPipe } from './zadatak/d1/filt.pipe';
     SorterPipe,
     FilterPipe,
     SortPipe,
-    FiltPipe
+    FiltPipe,
+    PloviloComponent
   ],
   imports: [
     BrowserModule,

@@ -28,8 +28,7 @@
             ],
             "styles": [
               "src/styles.css"
-            ],
-            "scripts": ["src/assets/js/skripta1.js"]
+            ]
           },
           "configurations": {
             "production": {
@@ -95,8 +94,7 @@
             ],
             "styles": [
               "src/styles.css"
-            ],
-            "scripts": ["src/assets/js/skripta1.js"]
+            ]
           }
         }
       }
