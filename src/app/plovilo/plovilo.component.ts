@@ -33,25 +33,22 @@ export class PloviloComponent implements OnInit, OnDestroy {
 
 
 
+
   ngOnInit(): void {
     console.log("inicijalizacija");
-    this.ploviloSubject=this.ploviloService.getPlovilaFromAPI();
-    this.subscription=this.ploviloSubject.subscribe(
-      res => {
-        this.plovila=res;
-      }
 
-
-
+    this.ploviloService.getPlovilaFromAPI().subscribe(
+      r => this.plovila=r
     )
 
-    this.plovila.push(new Plovilo(1,"toni","ante","mate"));
+
+    // this.plovila.push(new Plovilo(1,"toni","ante","mate"));
 
 
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe();
+    // this.subscription.unsubscribe();
   }
 
 

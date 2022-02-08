@@ -9,33 +9,40 @@ import {BehaviorSubject, Observable} from "rxjs";
 })
 export class PloviloService {
 
-  plovila : any[]=[];
+  plovila : Plovilo[]=[];
   response:any;
-  // @ts-ignore
-  ploviloSubject : BehaviorSubject<Plovilo[]> = new BehaviorSubject<Plovilo[]>(null);
+  plovilaSubject : BehaviorSubject<Plovilo[]> = new BehaviorSubject<Plovilo[]>(this.plovila);
 
 
   constructor(private http:HttpClient, private dataService:DataService)
   {this.init(); }
 
   init() {
-    this.dataService.getPlovila()
-      .subscribe((res ) => {
-        // @ts-ignore
-        this.response=res;
-        console.log(res.toString());
-        this.ploviloSubject.next(this.plovila);
-      });
 
-    console.log(this.dataService.getPlovila().toString());
+    this.dataService.getPlovila().subscribe(a => {
+        // @ts-ignore
+        this.plovila = a["resp"][0];
+        this.plovilaSubject.next(this.plovila);
+      }
+    );
+
+    console.log("toni as");
+
+
+    // this.dataService.getPlovila()
+    //   .subscribe((res ) => {
+    //     // @ts-ignore
+    //     this.response=res;
+    //     this.ploviloSubject.next(this.plovila);
+    //   });
   }
 
   getPlovilaFromAPI() {
-    return this.ploviloSubject;
+    return this.plovilaSubject;
   }
 
   getPlovilo(_id:number) {
-    return this.plovila.find(p => p.id);
+    // return this.plovila.find(p => p.id);
   }
 
   getResponse() {return this.response;}
