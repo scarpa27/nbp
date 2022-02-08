@@ -14,6 +14,7 @@ import {Router} from "@angular/router";
 export class PloviloComponent implements OnInit, OnDestroy {
 
   plovila : Plovilo[]=[];
+  response:any;
   // @ts-ignore
   ploviloSubject : BehaviorSubject<Plovilo[]>;
   // @ts-ignore
@@ -23,9 +24,14 @@ export class PloviloComponent implements OnInit, OnDestroy {
 
 
 
-  constructor(private http:HttpClient, private ploviloService : PloviloService, private router:Router) {
+  constructor(
+    private http:HttpClient,
+    private ploviloService : PloviloService,
+    private router:Router
+  )
+  {}
 
-  }
+
 
   ngOnInit(): void {
     console.log("inicijalizacija");
@@ -34,7 +40,13 @@ export class PloviloComponent implements OnInit, OnDestroy {
       res => {
         this.plovila=res;
       }
+
+
+
     )
+
+    this.plovila.push(new Plovilo(1,"toni","ante","mate"));
+
 
   }
 

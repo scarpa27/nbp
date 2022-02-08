@@ -11,6 +11,9 @@ import {Z4Component} from "./zadatak/Z4.component";
 import {Z4detaljiComponent} from "./zadatak/Z4detalji.component";
 import {FilterPipe} from "./zadatak/filter.pipe";
 import { PloviloComponent } from './plovilo/plovilo.component';
+import {PloviloService} from "./plovilo/plovilo.service";
+import {DataService} from "./plovilo/data.service";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -26,9 +29,14 @@ import { PloviloComponent } from './plovilo/plovilo.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    PloviloService,
+    DataService,
+    HttpClient
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
