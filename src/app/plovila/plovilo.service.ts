@@ -20,6 +20,9 @@ export class PloviloService {
     drzave: Drzava[] = [];
     drzaveSubject: BehaviorSubject<Drzava[]> = new BehaviorSubject<Drzava[]>(this.drzave);
 
+    drzava: Drzava = new Drzava();
+    drzavaSubject: BehaviorSubject<Drzava> = new BehaviorSubject<Drzava>(this.drzava);
+
     vlasnici: Vlasnik[] = [];
     vlasniciSubject: BehaviorSubject<Vlasnik[]> = new BehaviorSubject<Vlasnik[]>(this.vlasnici);
 
@@ -62,8 +65,24 @@ export class PloviloService {
         return this.drzaveSubject;
     }
 
+    getDrzavaAPI(_id: number) {
+        this.dataService.getDrzava(_id).subscribe(a => {
+            // @ts-ignore
+            this.drzava = a["resp"];
+            // @ts-ignore
+            this.drzavaSubject
+                .next(this.drzava)
+        });
+        return this.drzavaSubject;
+    }
+
+    postDrzavaAPI(_drzava: string) {
+        console.log("iz plovilo seevisa "+_drzava);
+        this.dataService.postDrzava(_drzava).subscribe();
+    }
+
     getVlasniciAPI() {
-        this.dataService.getVlasnici().subscribe( a => {
+        this.dataService.getVlasnici().subscribe(a => {
             // @ts-ignore
             this.vlasnici = a["resp"];
             // @ts-ignore
@@ -74,6 +93,10 @@ export class PloviloService {
     }
 
 
+    goToLink(link: string) {
+        let a = window.open(link, "_blank", "resizable=no, toolbar=no, menubar=no location=no");
+        a?.focus();
+    }
 
 
 }

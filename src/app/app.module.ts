@@ -19,7 +19,9 @@ import {PloviloComponent} from './plovila/plovilo.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AeVlasnikComponent } from './addEdit/ae-vlasnik.component';
 import { AePloviloComponent } from './addEdit/ae-plovilo.component';
-import { AeAdresaComponent } from './addEdit/ae-adresa.component';
+import { AeAdresaComponent } from './addEdit/toponim/ae-adresa.component';
+import { AeMjestoComponent } from './addEdit/toponim/ae-mjesto.component';
+import { AeDrzavaComponent } from './addEdit/toponim/ae-drzava.component';
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import { AeAdresaComponent } from './addEdit/ae-adresa.component';
         PloviloComponent,
         AeVlasnikComponent,
         AePloviloComponent,
-        AeAdresaComponent
+        AeAdresaComponent,
+        AeMjestoComponent,
+        AeDrzavaComponent
     ],
     imports: [
         BrowserModule,

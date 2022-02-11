@@ -21,7 +21,20 @@ export class DataService {
     }
 
     getDrzave() {
-        return this.http.get(join(this.apiRoot,"drzave"));
+        return this.http.get(join(this.apiRoot,"drzava"));
+    }
+
+    getDrzava(_id: number) {
+        return this.http.get(join(this.apiRoot,"drzava",_id.toString()))
+    }
+
+    postDrzava(_drzava: string) {
+        console.log("iz data servisa");
+        let body = {drzava: _drzava};
+        console.log(body);
+        let a=this.http.post(join(this.apiRoot,"drzava"),{drzava: _drzava});
+        console.log(a);
+        return a;
     }
 
     getVlasnici() {

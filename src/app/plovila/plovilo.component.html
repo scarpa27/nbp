@@ -1,53 +1,51 @@
 <div class="container emp-profile">
 
 
-
-        <div class="row">
-            <div class="col-md-6">
-                <button class="profile-edit-btn" id="uredi" [routerLink]="[ '/edit/plovilo', plovilo.id ]" >Uredi</button>
-            </div>
+    <div class="row">
+        <div class="col-md-6">
+            <a (click)="servis.goToLink('/edit/plovilo/'+plovilo.id)">
+                <button class="profile-edit-btn" id="uredi">Uredi</button>
+            </a>
         </div>
+    </div>
 
-        <div class="row">
-            <div class="col-md-12">
-                <div class="tab-content profile-tab" id="myTabContent">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tab-content profile-tab" id="myTabContent">
 
-                    <div aria-labelledby="plovilo-show" class="tab-pane fade show active" id="home" role="tabpanel">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Naziv broda</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{plovilo.ime}}</p>
-                            </div>
+                <div aria-labelledby="plovilo-show" class="tab-pane fade show active" id="home" role="tabpanel">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Naziv broda</label>
                         </div>
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Ime vlasnika</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{plovilo.vlasnik}}</p>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Država registracije</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{plovilo.drzava}}</p>
-                            </div>
+                        <div class="col-md-6">
+                            <p>{{plovilo.naziv}}</p>
                         </div>
                     </div>
 
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Ime vlasnika</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>{{plovilo.vlasnik}}</p>
+                        </div>
+                    </div>
 
-
-
-
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Država registracije</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>{{plovilo.drzava}}</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
+
+            </div>
         </div>
+
+    </div>
 
 </div>

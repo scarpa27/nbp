@@ -7,6 +7,9 @@ import {PlovilaComponent} from "./plovila/plovila.component";
 import {PloviloComponent} from "./plovila/plovilo.component";
 import {AePloviloComponent} from "./addEdit/ae-plovilo.component";
 import {AeVlasnikComponent} from "./addEdit/ae-vlasnik.component";
+import {AeDrzavaComponent} from "./addEdit/toponim/ae-drzava.component";
+import {AeMjestoComponent} from "./addEdit/toponim/ae-mjesto.component";
+import {AeAdresaComponent} from "./addEdit/toponim/ae-adresa.component";
 
 const routes: Route[] = [
     {path: '', component: PocetakComponent},
@@ -18,6 +21,12 @@ const routes: Route[] = [
     {path: 'edit/plovilo/:id', component: AePloviloComponent},
     {path: 'add/vlasnik', component: AeVlasnikComponent},
     {path: 'edit/vlasnik/:id', component: AeVlasnikComponent}
+    , {path: 'add/drzava', component: AeDrzavaComponent}
+    , {path: 'edit/drzava/:id', component: AeDrzavaComponent}
+    , {path: 'add/mjesto', component: AeMjestoComponent}
+    , {path: 'edit/mjesto/:id', component: AeMjestoComponent}
+    , {path: 'add/adresa', component: AeAdresaComponent}
+    , {path: 'edit/adresa/:id', component: AeAdresaComponent}
     // , {path: '', component: }
 ];
 

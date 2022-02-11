@@ -72,3 +72,14 @@ hr {
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+
+.gumb {
+    border: none;
+    border-radius: 1.5rem;
+    /*width: 100%;*/
+    padding: 2%;
+    font-weight: 600;
+    color: #2b3739;
+    cursor: pointer;
+    min-height: 70%;
+}

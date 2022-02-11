@@ -1,6 +1,6 @@
 export class Plovilo {
     'id': number;
-    'ime': string;
+    'naziv': string;
     'vlasnik': string;
     'drzava': string;
 
@@ -8,13 +8,13 @@ export class Plovilo {
     'musterija_id': number;
 
     constructor(_id: number = 0,
-                _ime: string = 'ime',
+                _naziv: string = 'naziv',
                 _vlasnik: string = 'vlasnik',
                 _drzava: string = 'drzava',
                 _drzava_reg_id: number = 0,
                 _musterija_id: number = 0) {
         this.id = _id;
-        this.ime = _ime;
+        this.naziv = _naziv;
         this.vlasnik = _vlasnik;
         this.drzava = _drzava;
 

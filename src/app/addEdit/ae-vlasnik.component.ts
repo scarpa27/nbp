@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ae-vlasnik.component.css']
 })
 export class AeVlasnikComponent implements OnInit {
+    _id: number = 0;
+    _editing: boolean = false;
+
 
   constructor() { }
 

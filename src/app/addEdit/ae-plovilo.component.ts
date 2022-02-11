@@ -31,7 +31,7 @@ export class AePloviloComponent implements OnInit {
       private route: ActivatedRoute,
       private router: Router,
       // private formBuilder: FormBuilder,
-      private ploviloService: PloviloService
+      public servis: PloviloService
   ) {
   }
 
@@ -45,14 +45,12 @@ export class AePloviloComponent implements OnInit {
 
 
       if (this._editing) {
-          this.ploviloService.getPloviloAPI(this._id)
+          this.servis.getPloviloAPI(this._id)
               .subscribe(r => {
                   this.plovilo = r;
-                  this.editNaziv = this.plovilo.ime;
+                  this.editNaziv = this.plovilo.naziv;
                   this.editDrzava_id = this.plovilo.drzava_reg_id;
                   this.editVlasnik_id = this.plovilo.musterija_id;
-                  console.log("init");
-                  console.log(this.editVlasnik_id);
               });
 
 
@@ -64,17 +62,16 @@ export class AePloviloComponent implements OnInit {
   }
 
   listaVlasnika() : void {
-      this.ploviloService.getVlasniciAPI()
+      this.servis.getVlasniciAPI()
           .subscribe(r => this.vlasnici = r);
   }
 
   listaDrzava() : void {
-      this.ploviloService.getDrzaveAPI()
+      this.servis.getDrzaveAPI()
           .subscribe(r => this.drzave = r);
   }
 
   printVlasnik() : void {
-      console.log("tonias");
       console.log(this.editVlasnik_id);
   }
 

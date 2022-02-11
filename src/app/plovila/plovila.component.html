@@ -1,7 +1,6 @@
-
 <div class="row">
     <div class="col-md-6">
-        <a (click)="goToLink('/add/plovilo')"><button >Dodaj novo plovilo</button></a>
+        <button (click)="servis.goToLink('/add/plovilo')" class="gumb">Dodaj novo plovilo</button>
     </div>
 </div>
 <table class="table table-striped">
@@ -13,8 +12,8 @@
     </tr>
     <tr *ngFor="let data of plovila" [routerLink]="['/plovilo',data.id]">
 
-        <td><{{data.id}}</td>
-        <td>{{data.ime}}</td>
+        <td>{{data.id}}</td>
+        <td>{{data.naziv}}</td>
         <td>{{data.vlasnik}}</td>
         <td>{{data.drzava}}</td>
     </tr>

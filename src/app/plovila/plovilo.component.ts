@@ -14,11 +14,11 @@ export class PloviloComponent implements OnInit, OnDestroy {
     plovilo: Plovilo = new Plovilo();
     subscription: BehaviorSubject<Plovilo> = new BehaviorSubject<Plovilo>(this.plovilo);
 
-    constructor(private ploviloService: PloviloService, private route: ActivatedRoute) {
+    constructor(public servis: PloviloService, private route: ActivatedRoute) {
     }
 
     ngOnInit(): void {
-        this.subscription = this.ploviloService.getPloviloAPI(this.route.snapshot.params['id']);
+        this.subscription = this.servis.getPloviloAPI(this.route.snapshot.params['id']);
 
         this.subscription.subscribe(
             r => {this.plovilo = r;

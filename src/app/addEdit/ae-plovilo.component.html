@@ -20,7 +20,7 @@
             </select>
         </div>
         <div class="col-md-2">
-            <button [routerLink]="['/add/vlasnik']">Novi vlasnik</button>
+            <button (click)="servis.goToLink('/add/vlasnik')">Novi vlasnik</button>
         </div>
         <div class="col-md-2">
             <button (click)="listaVlasnika()">Osvježi listu</button>
@@ -34,7 +34,7 @@
 
         </div>
         <div class="col-md-2">
-            <button [routerLink]="['add/adresa']">Nova država</button>
+            <button (click)="servis.goToLink('/add/drzava')">Nova država</button>
         </div>
         <div class="col-md-2">
             <button (click)="listaDrzava()">Osvježi listu</button>

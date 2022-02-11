@@ -15,11 +15,11 @@ export class PlovilaComponent implements OnInit, OnDestroy {
     subscription: BehaviorSubject<Plovilo[]> = new BehaviorSubject<Plovilo[]>(this.plovila);
 
 
-    constructor(private ploviloService: PloviloService) {
+    constructor(public servis: PloviloService) {
     }
 
     ngOnInit(): void {
-        this.subscription = this.ploviloService.getPlovilaAPI();
+        this.subscription = this.servis.getPlovilaAPI();
 
         this.subscription.subscribe(
             r => this.plovila = r
@@ -30,15 +30,6 @@ export class PlovilaComponent implements OnInit, OnDestroy {
         // this.subscription.unsubscribe();
     }
 
-    goToLink(link:string) {
-        console.log("jea");
-        let a = window.open(link, "_blank","resizable=no, toolbar=no, menubar=no location=no");
-
-        if (a) {
-            console.log(a);
-            a.focus();
-        }
-    }
 
 
 }
