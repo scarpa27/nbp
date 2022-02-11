@@ -23,7 +23,7 @@ module.exports = function (express, pool) {
                 [x.drzava_reg_id, x.musterija_id, x.naziv, x.id])
         })
         .delete(async function (req, res) {
-            await baza(req, res, 'DELETE from PLOVILO where id=?', [req.body.id]);
+            await baza(req, res, 'DELETE from PLOVILO where id=?', [req.params.id]);
         });
 
 
@@ -44,7 +44,7 @@ module.exports = function (express, pool) {
             await baza(req, res, 'UPDATE drzava SET drzava=? WHERE id=?', [x.drzava, x.id]);
         })
         .delete(async function (req, res) {
-            await baza(req, res, 'DELETE from drzava where id=?', [req.body.id]);
+            await baza(req, res, 'DELETE from drzava where id=?', [req.params.id]);
         });
 
 
@@ -66,7 +66,7 @@ module.exports = function (express, pool) {
             await baza(req, res, 'UPDATE mjesto SET naziv=?, drzava_id=? WHERE id=?', [x.naziv, x.drzava_id, x.id]);
         })
         .delete(async function (req, res) {
-            await baza(req, res, 'DELETE from mjesto WHERE id=?', [req.body.id]);
+            await baza(req, res, 'DELETE from mjesto WHERE id=?', [req.params.id]);
         });
 
 
@@ -81,14 +81,14 @@ module.exports = function (express, pool) {
 
     apiRouter.route('/adresa/:id')
         .get(async function(req,res) {
-            await baza(req, res, 'SELECT * FROM adresa WHERE id=?', [req.body.id]);
+            await baza(req, res, 'SELECT * FROM adresa WHERE id=?', [req.params.id]);
         })
         .put(async function(req,res) {
             let x=req.body;
             await baza(req, res, 'UPDATE adresa SET mjesto_id=?, adresa=? WHERE id=?', [x.mjesto_id, x.adresa, x.id]);
         })
         .delete(async function(req,res) {
-            await baza(req, res, 'DELETE from adresa WHERE id=?', [req.body.id]);
+            await baza(req, res, 'DELETE from adresa WHERE id=?', [req.params.id]);
         });
 
 
@@ -103,14 +103,14 @@ module.exports = function (express, pool) {
 
     apiRouter.route('/vlasnik/:id')
         .get(async function (req, res) {
-            await baza(req, res, 'SELECT * FROM musterija WHERE id=?', [req.body.id]);
+            await baza(req, res, 'SELECT * FROM musterija WHERE id=?', [req.params.id]);
         })
         .put(async function (req, res) {
             let x = req.body;
-            await baza(req, res, 'UPDATE musterija SET ime=?, prezime=?, adresa_id=?, oib=? WHERE id=?', [x.ime, x.prezime, x.adresa_id, x.oib, x.id]);
+            await baza(req, res, 'UPDATE musterija SET ime=?, prezime=?, adresa_id=?, oib=? WHERE id=?', [x.ime, x.prezime, x.adresa_id, x.oib, req.params.id]);
         })
         .delete(async function(req,res) {
-            await baza(req, res, 'DELETE from musterija WHERE id=?', [req.body.id]);
+            await baza(req, res, 'DELETE from musterija WHERE id=?', [req.params.id]);
         });
 
 

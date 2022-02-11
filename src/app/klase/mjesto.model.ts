@@ -4,7 +4,7 @@ export class Mjesto {
     'naziv': string;
 
     constructor(_id: number = 0,
-                _drzava_id: number = 'drzava id',
+                _drzava_id: number = 0,
                 _naziv: string = 'naziv drzave') {
         this.id = _id;
         this.drzava_id = _drzava_id;

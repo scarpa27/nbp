@@ -40,7 +40,7 @@ export class AeDrzavaComponent implements OnInit {
   }
 
   save() {
-
+      this.servis.putDrzavaAPI(this._id, this.editNaziv);
     }
 
 }

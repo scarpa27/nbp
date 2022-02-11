@@ -4,10 +4,10 @@ export class Adresa {
     'adresa': string;
 
     constructor(_id: number = 0,
-                _mjesto_id: number = 'mjesto id',
+                _mjesto_id: number = 0,
                 _adresa: string = 'ulica i broj') {
         this.id = _id;
-        this.drzava_id = _drzava_id;
+        this.mjesto_id = _mjesto_id;
         this.adresa = _adresa;
     }
 }
