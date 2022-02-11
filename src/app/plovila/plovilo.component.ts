@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Plovilo} from "./plovilo.model";
+import {Plovilo} from "../klase/plovilo.model";
 import {BehaviorSubject} from "rxjs";
 import {PloviloService} from "./plovilo.service";
 import {ActivatedRoute} from "@angular/router";

@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Plovilo} from "./plovilo.model";
+import {Plovilo} from "../klase/plovilo.model";
 import {BehaviorSubject} from "rxjs";
 import {PloviloService} from "./plovilo.service";
 
@@ -28,6 +28,16 @@ export class PlovilaComponent implements OnInit, OnDestroy {
 
     ngOnDestroy() {
         // this.subscription.unsubscribe();
+    }
+
+    goToLink(link:string) {
+        console.log("jea");
+        let a = window.open(link, "_blank","resizable=no, toolbar=no, menubar=no location=no");
+
+        if (a) {
+            console.log(a);
+            a.focus();
+        }
     }
 
 

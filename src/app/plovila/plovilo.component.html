@@ -1,20 +1,18 @@
 <div class="container emp-profile">
 
-    <form method="post">
+
 
         <div class="row">
             <div class="col-md-6">
-            </div>
-
-            <div class="col-md-6">
-                <input class="profile-edit-btn" name="btnAddMore" type="submit" value="Uredi"/>
+                <button class="profile-edit-btn" id="uredi" [routerLink]="[ '/edit/plovilo', plovilo.id ]" >Uredi</button>
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-12">
                 <div class="tab-content profile-tab" id="myTabContent">
-                    <div aria-labelledby="home-tab" class="tab-pane fade show active" id="home" role="tabpanel">
+
+                    <div aria-labelledby="plovilo-show" class="tab-pane fade show active" id="home" role="tabpanel">
                         <div class="row">
                             <div class="col-md-6">
                                 <label>Naziv broda</label>
@@ -42,9 +40,14 @@
                             </div>
                         </div>
                     </div>
-                </div>
 
+
+
+
+
+                </div>
             </div>
+
         </div>
-    </form>
+
 </div>

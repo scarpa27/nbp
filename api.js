@@ -6,12 +6,22 @@ module.exports=function (express,pool) {
   apiRouter.route('/plovilo')
     .get(async function(req,res) {
         await baza(req, res, 'CALL brodSVI()');
-    })
+    });
 
   apiRouter.route('/plovilo/:id')
     .get(async function (req,res) {
       await baza(req,res,`CALL brodID(${req.params.id})`);
-    })
+    });
+
+    apiRouter.route('/drzave')
+        .get(async function (req,res) {
+            await baza(req,res,'SELECT * FROM drzava');
+        });
+
+    apiRouter.route('/vlasnik')
+        .get(async function (req,res) {
+            await baza(req,res,'SELECT * FROM musterija');
+        });
 
 
 

@@ -17,6 +17,9 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {HeaderComponent} from './header/header.component';
 import {PloviloComponent} from './plovila/plovilo.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { AeVlasnikComponent } from './addEdit/ae-vlasnik.component';
+import { AePloviloComponent } from './addEdit/ae-plovilo.component';
+import { AeAdresaComponent } from './addEdit/ae-adresa.component';
 
 
 @NgModule({
@@ -29,7 +32,10 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
         FilterPipe,
         PlovilaComponent,
         HeaderComponent,
-        PloviloComponent
+        PloviloComponent,
+        AeVlasnikComponent,
+        AePloviloComponent,
+        AeAdresaComponent
     ],
     imports: [
         BrowserModule,
