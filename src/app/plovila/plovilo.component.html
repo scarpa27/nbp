@@ -1,0 +1,50 @@
+<div class="container emp-profile">
+
+    <form method="post">
+
+        <div class="row">
+            <div class="col-md-6">
+            </div>
+
+            <div class="col-md-6">
+                <input class="profile-edit-btn" name="btnAddMore" type="submit" value="Uredi"/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div aria-labelledby="home-tab" class="tab-pane fade show active" id="home" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Naziv broda</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{plovilo.ime}}</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Ime vlasnika</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{plovilo.vlasnik}}</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Država registracije</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{plovilo.drzava}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</div>

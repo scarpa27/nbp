@@ -1,42 +1,49 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {FormsModule} from "@angular/forms";
 import {PocetakComponent} from "./pocetak/pocetak.component";
-import { SorterPipe } from './zadatak/sorter.pipe';
+import {SorterPipe} from './zadatak/sorter.pipe';
 import {Z4Component} from "./zadatak/Z4.component";
 import {Z4detaljiComponent} from "./zadatak/Z4detalji.component";
 import {FilterPipe} from "./zadatak/filter.pipe";
-import { PloviloComponent } from './plovilo/plovilo.component';
-import {PloviloService} from "./plovilo/plovilo.service";
-import {DataService} from "./plovilo/data.service";
+import {PlovilaComponent} from './plovila/plovila.component';
+import {PloviloService} from "./plovila/plovilo.service";
+import {DataService} from "./data.service";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HeaderComponent} from './header/header.component';
+import {PloviloComponent} from './plovila/plovilo.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PocetakComponent,
-    Z4Component,
-    Z4detaljiComponent,
-    SorterPipe,
-    FilterPipe,
-    PloviloComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule
-  ],
-  providers: [
-    PloviloService,
-    DataService,
-    HttpClient
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        PocetakComponent,
+        Z4Component,
+        Z4detaljiComponent,
+        SorterPipe,
+        FilterPipe,
+        PlovilaComponent,
+        HeaderComponent,
+        PloviloComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        HttpClientModule,
+        NgbModule
+    ],
+    providers: [
+        PloviloService,
+        DataService,
+        HttpClient
+    ],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

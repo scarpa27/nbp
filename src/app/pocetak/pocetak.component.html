@@ -1,10 +1,13 @@
-
-<section id="wrap-clanci-1">
-  <article class="article33" *ngFor="let zad of zadatak">
-    <a [routerLink]="[zad.lok]">
-      <h4>{{zad.ime}}</h4>
-      <h5>{{zad.kat}}</h5>
-    </a>
-  </article>
-</section>
+<!--<section id="wrap-clanci-1">-->
+<div class="container">
+    <div class="row">
+        <article *ngFor="let zad of zadatak" class="article33 col-sm-3">
+            <a [routerLink]="[zad.lok]">
+                <h4>{{zad.ime}}</h4>
+                <h5>{{zad.kat}}</h5>
+            </a>
+        </article>
+    </div>
+</div>
+<!--</section>-->
 

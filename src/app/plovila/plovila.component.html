@@ -1,0 +1,26 @@
+<!--<table>-->
+<!--  <tr *ngFor="let key of arrayOfKeys">-->
+<!--    <th>{{key}}</th>-->
+<!--    <td *ngFor="let data of datas">-->
+<!--      {{data[key]}}-->
+<!--    </td>-->
+<!--  </tr>-->
+<!--</table>-->
+
+
+<table class="table table-striped">
+    <tr>
+        <th>id</th>
+        <th>naziv</th>
+        <th>vlasnik</th>
+        <th>drzava</th>
+    </tr>
+    <tr *ngFor="let data of plovila" [routerLink]="['/plovilo',data.id]">
+
+        <td><a>{{data.id}}</a></td>
+        <td><a>{{data.ime}}</a></td>
+        <td>{{data.vlasnik}}</td>
+        <td>{{data.drzava}}</td>
+    </tr>
+</table>
+
