@@ -1,0 +1,24 @@
+.row {
+    min-height: 100px
+}
+
+.row > div  {
+    min-height: 100%;
+}
+
+.row > div > button {
+    border: none;
+    border-radius: 1.5rem;
+    width: 100%;
+    padding: 2%;
+    font-weight: 600;
+    color: #6c757d;
+    cursor: pointer;
+    min-height: 70%;
+}
+
+.row > div > select {
+    min-width: 70%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
