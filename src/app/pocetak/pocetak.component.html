@@ -1,8 +1,10 @@
 <div class="container">
     <div class="row">
-        <article *ngFor="let zad of zadatak" class="article33 col-sm-3" [routerLink]="[zad.lok]">
-            <h4>{{zad.ime}}</h4>
-            <h5>{{zad.kat}}</h5>
-        </article>
+        <div class="col-md-4">
+            <article *ngFor="let zad of zadatak" class="col-sm-3" [routerLink]="[zad.lok]">
+                <h4>{{zad.ime}}</h4>
+                <h5>{{zad.kat}}</h5>
+            </article>
+        </div>
     </div>
 </div>

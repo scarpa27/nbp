@@ -1,27 +1,18 @@
-.article33 {
+article {
     box-sizing: border-box;
-    width: 32%;
+    width: 90%;
     margin-bottom: 17px;
     display: inline-block;
     font-family: 'Merriweather', serif;
-    transition: 0s 1s;
+    transition: 1s 0s;
     padding: 5px;
 }
-
-
 
 article:hover {
     transform: scale(1.03);
     background-color: #103747;
     color: white;
-}
-
-article:hover {
     transition: 0s 0s;
-}
-
-article {
-    transition: transform 1s, color 10s, background-color 10s;
 }
 
 a {

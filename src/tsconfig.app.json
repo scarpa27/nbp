@@ -8,7 +8,6 @@
         "resolveJsonModule": true
     },
     "exclude": [
-        "test.ts",
         "**/*.spec.ts"
     ]
 }
