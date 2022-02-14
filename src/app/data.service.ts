@@ -31,7 +31,7 @@ export class DataService {
 
     putPlovilo(_drzava_reg_id: number, _musterija_id: number, _naziv: string, _id: number) {
         return this.http.put(join(this.apiRoot, "plovilo", _id.toString()), {drzava_reg_id: _drzava_reg_id, musterija_id: _musterija_id, naziv: _naziv, id: _id
-        })
+        });
     }
 
     deletePlovilo(_id: number) {

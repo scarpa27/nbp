@@ -1,10 +1,10 @@
 .article33 {
-    /*box-sizing: border-box;*/
-    /*width: 32%;*/
-    /*margin-bottom: 17px;*/
-    /*display: inline-block;*/
+    box-sizing: border-box;
+    width: 32%;
+    margin-bottom: 17px;
+    display: inline-block;
     font-family: 'Merriweather', serif;
-    transition: .3s .3s;
+    transition: 0s 1s;
     padding: 5px;
 }
 

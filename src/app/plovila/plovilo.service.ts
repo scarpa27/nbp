@@ -73,11 +73,11 @@ export class PloviloService {
     }
 
     postPloviloAPI(_drzava_reg_id: number, _musterija_id: number, _naziv: string) {
-        this.dataService.postPlovilo(_drzava_reg_id, _musterija_id, _naziv).subscribe();
+        return this.dataService.postPlovilo(_drzava_reg_id, _musterija_id, _naziv).subscribe();
     }
 
     putPloviloAPI(_drzava_reg_id: number, _musterija_id: number, _naziv: string, _id: number) {
-        this.dataService.postPlovilo(_drzava_reg_id, _musterija_id, _naziv).subscribe();
+        return this.dataService.putPlovilo(_drzava_reg_id, _musterija_id, _naziv, _id).subscribe();
     }
 
     deletePloviloAPI(_id: number) {

@@ -1,1 +1,45 @@
-<p>ae-mjesto works!</p>
+<div class="row">
+    <div class="col-md-4 offset-md-2">
+        <h2 *ngIf="!_editing">Dodaj mjesto</h2>
+        <h2 *ngIf="_editing">Uredi mjesto</h2>
+    </div>
+</div>
+
+
+<div>
+    <div class="row">
+        <div class="col-md-4 offset-md-2">
+            <input type="text" class="" placeholder="Naziv mjesta" [(ngModel)]="editNaziv">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 offset-md-2">
+            <select [(ngModel)]="editDrzava_id">
+                <option *ngFor="let drzava of drzave" [ngValue]="drzava.id">{{drzava.drzava}}</option>
+            </select>
+
+        </div>
+        <div class="col-md-2">
+            <button (click)="servis.goToLink('/add/drzava')">Nova država</button>
+        </div>
+        <div class="col-md-2">
+            <button (click)="listaDrzava()">Osvježi listu</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div *ngIf="_editing" class="col-md-2">
+            <button (click)="saveChange()">Spremi izmjene</button>
+        </div>
+        <div *ngIf="_editing" class="col-md-2">
+            <button (click)="saveAsNew()">Spremi kao novo</button>
+        </div>
+        <div *ngIf="!_editing" class="col-md-2">
+            <button (click)="saveAsNew()">Spremi</button>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+

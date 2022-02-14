@@ -14,6 +14,9 @@ export class PlovilaComponent implements OnInit, OnDestroy {
     plovila: Plovilo[] = [];
     subscription: BehaviorSubject<Plovilo[]> = new BehaviorSubject<Plovilo[]>(this.plovila);
 
+    stupac: string = "id";
+    obrnuto: boolean = false;
+
 
     constructor(public servis: PloviloService) {
     }
@@ -23,13 +26,25 @@ export class PlovilaComponent implements OnInit, OnDestroy {
 
         this.subscription.subscribe(
             r => this.plovila = r
-        )
+        );
     }
 
     ngOnDestroy() {
-        // this.subscription.unsubscribe();
     }
 
+    sortiranje(stup: string): void {
+        if (stup === this.stupac) {
+            this.obrnuto = !this.obrnuto;
+        }
+        else {
+            this.obrnuto = false;
+            this.stupac = stup;
+        }
+    }
+
+    smjer(ime: string) {
+        return ime == this.stupac ? this.obrnuto ? " ⬆️" : " ⬇️" : " 🟦";
+    }
 
 
 }

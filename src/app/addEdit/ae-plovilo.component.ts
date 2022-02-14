@@ -12,9 +12,6 @@ import {Vlasnik} from "../klase/vlasnik.model";
 })
 export class AePloviloComponent implements OnInit {
 
-
-    // // @ts-ignore
-    // _form: FormGroup;
     _id: number = 0;
     _editing: boolean = false;
     plovilo: Plovilo = new Plovilo();
@@ -32,8 +29,7 @@ export class AePloviloComponent implements OnInit {
       private router: Router,
       // private formBuilder: FormBuilder,
       public servis: PloviloService
-  ) {
-  }
+  ) {}
 
   ngOnInit(): void {
       this._id = this.route.snapshot.params['id'];
@@ -59,6 +55,16 @@ export class AePloviloComponent implements OnInit {
 
 
       }
+  }
+
+  saveChange() : void {
+      console.log(this.servis.putPloviloAPI(this.editDrzava_id, this.editVlasnik_id, this.editNaziv, this._id));;
+      // window.close();
+  }
+
+  saveAsNew() : void {
+      console.log(this.servis.postPloviloAPI(this.editDrzava_id, this.editVlasnik_id, this.editNaziv));;
+      // window.close();
   }
 
   listaVlasnika() : void {

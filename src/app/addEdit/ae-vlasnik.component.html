@@ -1,0 +1,74 @@
+<div class="row">
+    <div class="col-md-4 offset-md-2">
+        <h2 *ngIf="!_editing">Dodaj mušteriju</h2>
+        <h2 *ngIf="_editing">Uredi mušteriju</h2>
+    </div>
+</div>
+
+
+<div>
+    <div class="row">
+        <div class="col-md-4 offset-md-2">
+            <input type="text" class="" placeholder="Ime" [(ngModel)]="editIme">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 offset-md-2">
+            <input type="text" class="" placeholder="Prezime" [(ngModel)]="editPrezime">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 offset-md-2">
+            <input type="text" class="" placeholder="OIB" [(ngModel)]="editOIB">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 offset-md-2">
+            <select [(ngModel)]="editDrzava_id" (change)="mjestaPoDrzavi()">
+                <option *ngFor="let drzava of drzave" [ngValue]="drzava.id">{{drzava.drzava}}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 offset-md-2">
+            <select [(ngModel)]="editMjesto_id" (change)="adresePoMjestu()">
+                <option *ngFor="let mjesto of mjesta"
+                        [ngValue]="mjesto.id">{{mjesto.naziv}}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 offset-md-2">
+            <select [(ngModel)]="editAdresa_id">
+                <option *ngFor="let adresa of adrese"
+                        [ngValue]="adresa.id">{{adresa.adresa}}</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <button (click)="servis.goToLink('/add/adresa')">Nova adresa</button>
+        </div>
+        <div class="col-md-2">
+            <button (click)="listaAdresa()">Osvježi listu</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div *ngIf="_editing" class="col-md-2">
+            <button (click)="saveChange()">Spremi izmjene</button>
+        </div>
+        <div *ngIf="_editing" class="col-md-2">
+            <button (click)="saveAsNew()">Spremi kao novi</button>
+        </div>
+        <div *ngIf="!_editing" class="col-md-2">
+            <button (click)="saveAsNew()">Spremi</button>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+
