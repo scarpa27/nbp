@@ -1,0 +1,10 @@
+<form (submit)="log()" [formGroup]="login">
+    <fieldset>
+        <input type="text" formControlName="id" placeholder="Unesi ID">
+    </fieldset>
+    <fieldset>
+        <input type="password" formControlName="pass" placeholder="Unesi lozinku">
+    </fieldset>
+    <button type="submit" [disabled]="login.invalid">Prijava</button>
+    <div *ngIf="error">{{error}}</div>
+</form>

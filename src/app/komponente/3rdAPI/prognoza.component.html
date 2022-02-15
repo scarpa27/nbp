@@ -1,0 +1,44 @@
+<header-comp></header-comp>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2 offset-md-1">
+            <a (click)="ps.goto.Back()">
+                <button class="gumb" >Natrag</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <div class="row">
+                <div class="col-md-5 offset-md-1">Opis</div>
+                <div class="col-md-6">{{prognoza.opis}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-5 offset-md-1">Stvarna temperatura</div>
+                <div class="col-md-6">{{prognoza.temp}}°C</div>
+            </div>
+            <div class="row">
+                <div class="col-md-5 offset-md-1">Pravi osjećaj temperature</div>
+                <div class="col-md-6">{{prognoza.real_feel}}°C</div>
+            </div>
+            <div class="row">
+                <div class="col-md-5 offset-md-1">Brzina vjetra</div>
+                <div class="col-md-6">{{prognoza.v_brzina}} km/h</div>
+            </div>
+            <div class="row">
+                <div class="col-md-5 offset-md-1">Refuli vjetra</div>
+                <div class="col-md-6">{{prognoza.v_reful}} km/h</div>
+            </div>
+            <div class="row">
+                <div class="col-md-5 offset-md-1">Kut puhanja vjetra</div>
+                <div class="col-md-6">{{prognoza.v_kut}}°</div>
+            </div>
+            <div class="row">
+                <div class="offset-md-2"><a href="https://openweathermap.org/api">https://openweathermap.org/api</a></div>
+            </div>
+        </div>
+    </div>
+</div>

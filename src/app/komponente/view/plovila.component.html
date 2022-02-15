@@ -1,0 +1,28 @@
+<header-comp></header-comp>
+<div class="row">
+    <div class="col-md-6">
+        <button (click)="servis.goto.Link('/add/plovilo')" class="gumb">Dodaj novo plovilo</button>
+    </div>
+</div>
+<table class="table table-striped">
+    <tr>
+        <td><input type="text" [(ngModel)]="f[0]"></td>
+        <td><input type="text" [(ngModel)]="f[1]"></td>
+        <td><input type="text" [(ngModel)]="f[2]"></td>
+        <td><input type="text" [(ngModel)]="f[3]"></td>
+    </tr>
+    <tr>
+        <th class="noselect" (click)="sortiranje('id')">ID{{smjer('id')}}</th>
+        <th class="noselect" (click)="sortiranje('naziv')">Naziv{{smjer('naziv')}}</th>
+        <th class="noselect" (click)="sortiranje('vlasnik')">Vlasnik{{smjer('vlasnik')}}</th>
+        <th class="noselect" (click)="sortiranje('drzava')">Država registracije{{smjer('drzava')}}</th>
+    </tr>
+    <tr class="noselect" *ngFor="let data of plovila | sorter : stupac : obrnuto | filter : f" [routerLink]="['/plovilo',data.id]">
+
+        <td>{{data.id}}</td>
+        <td>{{data.naziv}}</td>
+        <td>{{data.vlasnik}}</td>
+        <td>{{data.drzava}}</td>
+    </tr>
+</table>
+

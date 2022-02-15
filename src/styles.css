@@ -74,12 +74,27 @@ hr {
 }
 
 .gumb {
-    border: none;
+    border: 1px solid #2b3739;
     border-radius: 1.5rem;
-    /*width: 100%;*/
+    width: 100%;
     padding: 2%;
     font-weight: 600;
     color: #2b3739;
     cursor: pointer;
     min-height: 70%;
+}
+
+.noselect {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+select {
+    min-width: 70%;
+}
+
+input {
+    min-width: 70%;
 }

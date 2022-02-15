@@ -1,0 +1,59 @@
+<div class="row">
+    <div class="col-md-4 offset-md-2">
+        <h2 *ngIf="!_editing">Dodaj plovilo</h2>
+        <h2 *ngIf="_editing">Uredi plovilo</h2>
+    </div>
+</div>
+
+
+<div>
+    <div class="row">
+        <div class="col-md-4 offset-md-2">
+            <input [(ngModel)]="editNaziv" class="" placeholder="Naziv broda" type="text">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 offset-md-2">
+            <select [(ngModel)]="editVlasnik_id">
+                <option *ngFor="let vlasnik of vlasnici"
+                        [ngValue]="vlasnik.id">{{vlasnik.ime}} {{vlasnik.prezime}}</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <button (click)="servis.goto.Link('/add/vlasnik')" class="gumb">Novi vlasnik</button>
+        </div>
+        <div class="col-md-2">
+            <button (click)="listaVlasnika()" class="gumb">Osvježi listu</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 offset-md-2">
+            <select [(ngModel)]="editDrzava_id">
+                <option *ngFor="let drzava of drzave" [ngValue]="drzava.id">{{drzava.drzava}}</option>
+            </select>
+
+        </div>
+        <div class="col-md-2">
+            <button (click)="servis.goto.Link('/add/drzava')" class="gumb">Nova država</button>
+        </div>
+        <div class="col-md-2">
+            <button (click)="listaDrzava()" class="gumb">Osvježi listu</button>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div *ngIf="_editing" class="col-md-2">
+            <button (click)="saveChange()" class="gumb">Spremi izmjene</button>
+        </div>
+        <div *ngIf="_editing" class="col-md-2">
+            <button (click)="saveAsNew()" class="gumb">Spremi kao novi</button>
+        </div>
+        <div *ngIf="!_editing" class="col-md-2">
+            <button (click)="saveAsNew()" class="gumb">Spremi</button>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+

@@ -1,0 +1,36 @@
+<header-comp></header-comp>
+<div class="container-fluid w-75">
+    <div class="row justify-content-center mx-md-n2 my-md-n2">
+        <div class="col-sm-3 px-md-2 py-md-2 align-items-center">
+            <article [routerLink]="['/plovilo']">
+                <h4>Lista plovila</h4>
+                <h5></h5>
+            </article>
+        </div>
+        <div class="col-sm-3 px-md-2 py-md-2 align-items-center">
+            <article [routerLink]="['/']">
+                <h4>Rezervacije</h4>
+                <h5></h5>
+            </article>
+        </div>
+        <div class="col-sm-3 px-md-2 py-md-2 align-items-center">
+            <article [routerLink]="['/prognoza']">
+                <h4>Vremenska prognoza</h4>
+                <h5></h5>
+            </article>
+        </div>
+        <div class="col-sm-3 px-md-2 py-md-2 align-items-center">
+            <article class="func" (click)="auth.logout()">
+                <h4>Odjavi se</h4>
+                <h5></h5>
+            </article>
+        </div>
+        <div class="col-sm-3 px-md-2 py-md-2 align-items-center">
+            <article [routerLink]="['/admin']">
+                <h4>Brisanje</h4>
+                <h5>admin</h5>
+            </article>
+        </div>
+    </div>
+</div>
+

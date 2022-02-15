@@ -1,33 +1,36 @@
 import {NgModule} from '@angular/core';
 import {Route, RouterModule} from "@angular/router";
-import {PocetakComponent} from "./pocetak/pocetak.component";
-import {Z4Component} from "./zadatak/Z4.component";
-import {Z4detaljiComponent} from "./zadatak/Z4detalji.component";
-import {PlovilaComponent} from "./plovila/plovila.component";
-import {PloviloComponent} from "./plovila/plovilo.component";
-import {AePloviloComponent} from "./addEdit/ae-plovilo.component";
-import {AeVlasnikComponent} from "./addEdit/ae-vlasnik.component";
-import {AeDrzavaComponent} from "./addEdit/toponim/ae-drzava.component";
-import {AeMjestoComponent} from "./addEdit/toponim/ae-mjesto.component";
-import {AeAdresaComponent} from "./addEdit/toponim/ae-adresa.component";
+import {PocetakComponent} from "./komponente/home/pocetak.component";
+import {PlovilaComponent} from "./komponente/view/plovila.component";
+import {PloviloComponent} from "./komponente/view/plovilo.component";
+import {AePloviloComponent} from "./komponente/addEdit/ae-plovilo.component";
+import {AeVlasnikComponent} from "./komponente/addEdit/ae-vlasnik.component";
+import {AeDrzavaComponent} from "./komponente/addEdit/toponim/ae-drzava.component";
+import {AeMjestoComponent} from "./komponente/addEdit/toponim/ae-mjesto.component";
+import {AeAdresaComponent} from "./komponente/addEdit/toponim/ae-adresa.component";
+import {LoginComponent} from "./komponente/home/login.component";
+import {PrognozaComponent} from "./komponente/3rdAPI/prognoza.component";
+import {AuthGuard} from "./servisi/auth.guard";
+import {BrisanjeComponent} from "./komponente/admin/crud/brisanje.component";
 
 const routes: Route[] = [
     {path: '', component: PocetakComponent},
-    {path: 'z4', component: Z4Component},
-    {path: 'z4/:jmbag', component: Z4detaljiComponent},
     {path: 'plovilo', component: PlovilaComponent},
     {path: 'plovilo/:id', component: PloviloComponent},
     {path: 'add/plovilo', component: AePloviloComponent},
     {path: 'edit/plovilo/:id', component: AePloviloComponent},
     {path: 'add/vlasnik', component: AeVlasnikComponent},
-    {path: 'edit/vlasnik/:id', component: AeVlasnikComponent}
-    , {path: 'add/drzava', component: AeDrzavaComponent}
-    , {path: 'edit/drzava/:id', component: AeDrzavaComponent}
-    , {path: 'add/mjesto', component: AeMjestoComponent}
-    , {path: 'edit/mjesto/:id', component: AeMjestoComponent}
-    , {path: 'add/adresa', component: AeAdresaComponent}
-    , {path: 'edit/adresa/:id', component: AeAdresaComponent}
-    // , {path: '', component: }
+    {path: 'edit/vlasnik/:id', component: AeVlasnikComponent},
+    {path: 'add/drzava', component: AeDrzavaComponent},
+    {path: 'edit/drzava/:id', component: AeDrzavaComponent},
+    {path: 'add/mjesto', component: AeMjestoComponent},
+    {path: 'edit/mjesto/:id', component: AeMjestoComponent},
+    {path: 'add/adresa', component: AeAdresaComponent},
+    {path: 'edit/adresa/:id', component: AeAdresaComponent},
+    {path: 'login', component: LoginComponent},
+    {path: 'prognoza', component: PrognozaComponent},
+    {path: 'admin', component: BrisanjeComponent, canActivate: [AuthGuard]},
+    {path: 'admin/brisanje', component: BrisanjeComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({
