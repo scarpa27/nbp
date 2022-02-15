@@ -68,12 +68,10 @@ export class AeAdresaComponent implements OnInit {
 
     saveChange(): void {
         this.servis.putAdresaAPI(this.editMjesto_id, this.editNaziv, this._id);
-        window.close();
     }
 
     saveAsNew(): void {
         this.servis.postAdresaAPI(this.editMjesto_id, this.editNaziv);
-        window.close();
     }
 
 }

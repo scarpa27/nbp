@@ -140,6 +140,12 @@ module.exports = function (express, pool, jwt, secret) {
         });
 
 
+    apiRouter.route('/ovlast')
+        .get(async function (req, res) {
+            await baza(req, res, 'SELECT * FROM ovlast');
+        });
+
+
 
 
 

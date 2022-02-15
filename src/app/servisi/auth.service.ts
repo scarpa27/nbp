@@ -22,6 +22,9 @@ export class AuthService {
         this.ds.postCred(cred.id, cred.pass)
             .subscribe(a => {
                 // @ts-ignore
+                let n = a['resp']['mess'];
+                this.errorEmitter.next(n < 3 ? n < 2 ? "" : "Kriv ID" : "Kriva lozinka");
+                // @ts-ignore
                 let o = a['resp']['rows'];
                 // @ts-ignore
                 this.operater.oib = o.oib;
@@ -41,6 +44,14 @@ export class AuthService {
         localStorage.removeItem("token");
         this.authChange.next(false);
         this.router.navigate(['login']).then();
+    }
+
+    reg(cred: {ime: string, prezime: string, ovlast_id: number, oib: string, sifra: string}) {
+        console.log("auth serv reg");
+        console.log(cred);
+
+        this.ds.regCred(cred)
+            .subscribe();
 
     }
 

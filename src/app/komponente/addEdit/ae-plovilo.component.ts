@@ -50,12 +50,12 @@ export class AePloviloComponent implements OnInit {
 
     saveChange(): void {
         this.servis.putPloviloAPI(this.editDrzava_id, this.editVlasnik_id, this.editNaziv, this._id);
-        window.close();
+
     }
 
     saveAsNew(): void {
         this.servis.postPloviloAPI(this.editDrzava_id, this.editVlasnik_id, this.editNaziv);
-        window.close();
+
     }
 
     listaVlasnika(): void {

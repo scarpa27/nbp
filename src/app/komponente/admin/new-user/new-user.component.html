@@ -1,0 +1,69 @@
+<header-comp></header-comp>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 offset-md-4">
+            <a (click)="ps.goto.Back()">
+                <button class="gumb">Natrag</button>
+            </a>
+        </div>
+    </div>
+
+    <form (submit)="reg()" [formGroup]="login">
+        <div class="row">
+            <div class="col-md-3 offset-md-4">
+                <fieldset>
+                    <input formControlName="oib" placeholder="OIB *" type="text">
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 offset-md-4">
+                <fieldset>
+                    <input formControlName="ime" placeholder="Ime *" type="text">
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 offset-md-4">
+                <fieldset>
+                    <input formControlName="prezime" placeholder="Prezime" type="text">
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 offset-md-4">
+                <fieldset>
+                    <input formControlName="sifra" placeholder="Unesi lozinku *" type="password">
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 offset-md-4">
+                <fieldset>
+                    <select [(ngModel)]="editOvlast_id" formControlName="ovlast_id">
+                        <option disabled value="0">Admin/korisnik</option>
+                        <option *ngFor="let ovlast of ovlasti" [ngValue]="ovlast.id">{{ovlast.naziv}}</option>
+                    </select>
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2 offset-md-4">
+                <button [disabled]="login.invalid" class="gumb" type="submit">Unesi korisnika</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div *ngIf="error" class="col-md-5 offset-md-4">
+                {{error}}
+            </div>
+        </div>
+
+
+    </form>
+</div>

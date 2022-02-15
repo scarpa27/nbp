@@ -141,12 +141,19 @@ export class DataService {
         return this.http.delete(join(this.apiRoot, "vlasnik", _id.toString()));
     }
 
+    getOvlasti() {
+        return this.http.get(join(this.apiRoot, "ovlast"));
+    }
+
+
     postCred(_id: string, _pass: string) {
-        console.log("data service post cred");
-        console.log(_id);
-        console.log(_pass);
         return this.http.post(join(this.authRoot), {id: _id, pass: _pass});
     }
+
+    regCred(cred: {ime: string, prezime: string, ovlast_id: number, oib: string, sifra: string}) {
+        return this.http.post(join(this.authRoot,"reg"), cred)
+    }
+
 
     getJa() {
         return this.http.get(join(this.apiRoot,"ja"));

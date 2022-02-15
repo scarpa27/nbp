@@ -78,11 +78,13 @@ export class PloviloService {
     }
 
     postPloviloAPI(_drzava_reg_id: number, _musterija_id: number, _naziv: string) {
-        return this.dataService.postPlovilo(_drzava_reg_id, _musterija_id, _naziv).subscribe();
+        return this.dataService.postPlovilo(_drzava_reg_id, _musterija_id, _naziv).subscribe(r => window.close());
     }
 
     putPloviloAPI(_drzava_reg_id: number, _musterija_id: number, _naziv: string, _id: number) {
-        return this.dataService.putPlovilo(_drzava_reg_id, _musterija_id, _naziv, _id).subscribe();
+        console.log(_id);
+        console.log(_musterija_id);
+        return this.dataService.putPlovilo(_drzava_reg_id, _musterija_id, _naziv, _id).subscribe(r => {window.close();});
     }
 
     deletePloviloAPI(_id: number) {
@@ -111,11 +113,11 @@ export class PloviloService {
     }
 
     postDrzavaAPI(_drzava: string) {
-        this.dataService.postDrzava(_drzava).subscribe();
+        this.dataService.postDrzava(_drzava).subscribe(() => window.close());
     }
 
     putDrzavaAPI(_id: number, _naziv: string) {
-        this.dataService.putDrzava(_id, _naziv).subscribe();
+        this.dataService.putDrzava(_id, _naziv).subscribe(() => window.close());
     }
 
     deleteDrzavaAPI(_id: number) {
@@ -142,11 +144,11 @@ export class PloviloService {
     }
 
     postMjestoAPI(_naziv: string, _drzava_id: number) {
-        this.dataService.postMjesto(_naziv, _drzava_id).subscribe();
+        this.dataService.postMjesto(_naziv, _drzava_id).subscribe(() =>  window.close());
     }
 
     putMjestoAPI(_naziv: string, _drzava_id: number, _id: number) {
-        this.dataService.putMjesto(_naziv, _drzava_id, _id).subscribe();
+        this.dataService.putMjesto(_naziv, _drzava_id, _id).subscribe(() =>  window.close());
     }
 
     deleteMjestoAPI(_id: number) {
@@ -173,11 +175,11 @@ export class PloviloService {
     }
 
     postAdresaAPI(_mjesto_id: number, _adresa: string) {
-        this.dataService.postAdresa(_mjesto_id, _adresa).subscribe();
+        this.dataService.postAdresa(_mjesto_id, _adresa).subscribe(() => window.close());
     }
 
     putAdresaAPI(_mjesto_id: number, _adresa: string, _id: number) {
-        this.dataService.putAdresa(_mjesto_id, _adresa, _id).subscribe();
+        this.dataService.putAdresa(_mjesto_id, _adresa, _id).subscribe(()=> window.close());
     }
 
     deleteAdresaAPI(_id: number) {
@@ -205,11 +207,11 @@ export class PloviloService {
     }
 
     postVlasnikAPI(_ime: string, _prezime: string, _adresa_id: number, _oib: string) {
-        this.dataService.postMusterija(_ime, _prezime, _adresa_id, _oib).subscribe();
+        this.dataService.postMusterija(_ime, _prezime, _adresa_id, _oib).subscribe(r => window.close());
     }
 
     putVlasnikAPI(_ime: string, _prezime: string, _adresa_id: number, _oib: string, _id: number) {
-        this.dataService.putMusterija(_ime, _prezime, _adresa_id, _oib, _id).subscribe();
+        this.dataService.putMusterija(_ime, _prezime, _adresa_id, _oib, _id).subscribe(r => window.close());
     }
 
     deleteVlasnikAPI(_id: number) {

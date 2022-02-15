@@ -1,23 +1,29 @@
 <header-comp></header-comp>
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-3 my-md-1">
+        <button (click)="servis.goto.Back()" class="gumb">Natrag</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3 my-md-1">
         <button (click)="servis.goto.Link('/add/plovilo')" class="gumb">Dodaj novo plovilo</button>
     </div>
 </div>
 <table class="table table-striped">
     <tr>
-        <td><input type="text" [(ngModel)]="f[0]"></td>
-        <td><input type="text" [(ngModel)]="f[1]"></td>
-        <td><input type="text" [(ngModel)]="f[2]"></td>
-        <td><input type="text" [(ngModel)]="f[3]"></td>
+        <td><input [(ngModel)]="f[0]" type="text"></td>
+        <td><input [(ngModel)]="f[1]" type="text"></td>
+        <td><input [(ngModel)]="f[2]" type="text"></td>
+        <td><input [(ngModel)]="f[3]" type="text"></td>
     </tr>
     <tr>
-        <th class="noselect" (click)="sortiranje('id')">ID{{smjer('id')}}</th>
-        <th class="noselect" (click)="sortiranje('naziv')">Naziv{{smjer('naziv')}}</th>
-        <th class="noselect" (click)="sortiranje('vlasnik')">Vlasnik{{smjer('vlasnik')}}</th>
-        <th class="noselect" (click)="sortiranje('drzava')">Država registracije{{smjer('drzava')}}</th>
+        <th (click)="sortiranje('id')" class="noselect">ID{{smjer('id')}}</th>
+        <th (click)="sortiranje('naziv')" class="noselect">Naziv{{smjer('naziv')}}</th>
+        <th (click)="sortiranje('vlasnik')" class="noselect">Vlasnik{{smjer('vlasnik')}}</th>
+        <th (click)="sortiranje('drzava')" class="noselect">Država registracije{{smjer('drzava')}}</th>
     </tr>
-    <tr class="noselect" *ngFor="let data of plovila | sorter : stupac : obrnuto | filter : f" [routerLink]="['/plovilo',data.id]">
+    <tr *ngFor="let data of plovila | sorter : stupac : obrnuto | filter : f" [routerLink]="['/plovilo',data.id]"
+        class="noselect">
 
         <td>{{data.id}}</td>
         <td>{{data.naziv}}</td>

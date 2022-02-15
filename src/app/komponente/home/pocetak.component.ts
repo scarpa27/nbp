@@ -11,8 +11,7 @@ export class PocetakComponent implements OnInit {
 
     zadatak = [
         {"ime": "Lista plovila", "lok": "plovilo", "kat": ""},
-        {"ime": "Pregled rezervacija", "lok": "", "kat": ""},
-        {"ime": "Nova rezervacija", "lok": "", "kat": ""},
+        {"ime": "Novi operater", "lok": "/admin/novi_operater", "kat": "admin"},
         {"ime": "Novi račun", "lok": "", "kat": ""},
         {"ime": "Vremenska prognoza", "lok": "prognoza", "kat": ""},
         {"ime": "Odjavi se", "lok": "", "kat": ""},

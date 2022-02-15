@@ -82,12 +82,10 @@ export class AeVlasnikComponent implements OnInit {
 
     saveChange() {
         this.servis.putVlasnikAPI(this.editIme, this.editPrezime, this.editAdresa_id, this.editOIB, this._id);
-        window.close();
     }
 
     saveAsNew() {
         this.servis.postVlasnikAPI(this.editIme, this.editPrezime, this.editAdresa_id, this.editOIB);
-        window.close();
     }
 
 }

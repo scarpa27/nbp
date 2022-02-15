@@ -47,12 +47,10 @@ export class AeMjestoComponent implements OnInit {
 
     saveChange(): void {
         this.servis.putMjestoAPI(this.editNaziv, this.editDrzava_id, this._id);
-        window.close();
     }
 
     saveAsNew(): void {
         this.servis.postMjestoAPI(this.editNaziv, this.editDrzava_id);
-        window.close();
     }
 
 }

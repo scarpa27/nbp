@@ -12,6 +12,7 @@ import {LoginComponent} from "./komponente/home/login.component";
 import {PrognozaComponent} from "./komponente/3rdAPI/prognoza.component";
 import {AuthGuard} from "./servisi/auth.guard";
 import {BrisanjeComponent} from "./komponente/admin/crud/brisanje.component";
+import {NewUserComponent} from "./komponente/admin/new-user/new-user.component";
 
 const routes: Route[] = [
     {path: '', component: PocetakComponent},
@@ -30,7 +31,8 @@ const routes: Route[] = [
     {path: 'login', component: LoginComponent},
     {path: 'prognoza', component: PrognozaComponent},
     {path: 'admin', component: BrisanjeComponent, canActivate: [AuthGuard]},
-    {path: 'admin/brisanje', component: BrisanjeComponent, canActivate: [AuthGuard]}
+    {path: 'admin/brisanje', component: BrisanjeComponent, canActivate: [AuthGuard]},
+    {path: 'admin/novi_operater', component: NewUserComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

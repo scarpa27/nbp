@@ -27,6 +27,7 @@ import { PrognozaComponent } from './komponente/3rdAPI/prognoza.component';
 import {AuthGuard} from "./servisi/auth.guard";
 import { AdminComponent } from './komponente/admin/admin.component';
 import { BrisanjeComponent } from './komponente/admin/crud/brisanje.component';
+import { NewUserComponent } from './komponente/admin/new-user/new-user.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { BrisanjeComponent } from './komponente/admin/crud/brisanje.component';
         LoginComponent,
         PrognozaComponent,
         AdminComponent,
-        BrisanjeComponent
+        BrisanjeComponent,
+        NewUserComponent
     ],
     imports: [
         BrowserModule,

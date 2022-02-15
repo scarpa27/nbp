@@ -36,12 +36,10 @@ export class AeDrzavaComponent implements OnInit {
 
     send() {
         this.servis.postDrzavaAPI(this.editNaziv);
-        window.close();
     }
 
     save() {
         this.servis.putDrzavaAPI(this._id, this.editNaziv);
-        window.close();
     }
 
 }
