@@ -3,7 +3,8 @@ import {Mjesto} from "../../../klase/mjesto.model";
 import {Adresa} from "../../../klase/adresa.model";
 import {Drzava} from "../../../klase/drzava.model";
 import {ActivatedRoute} from "@angular/router";
-import {PloviloService} from "../../../servisi/plovilo.service";
+import {ResponseService} from "../../../servisi/response.service";
+import {PointService} from "../../../servisi/point.service";
 
 @Component({
     selector: 'app-ae-adresa',
@@ -26,7 +27,8 @@ export class AeAdresaComponent implements OnInit {
 
     constructor(
         private route: ActivatedRoute,
-        public servis: PloviloService
+        private servis: ResponseService,
+        public goto: PointService
     ) {
     }
 

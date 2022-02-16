@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {map, Observable, Subject} from "rxjs";
 import {Router} from "@angular/router";
-import {DataService} from "./data.service";
+import {ApiService} from "./api.service";
 import {Operater} from "../klase/operater.model";
 
 @Injectable({
@@ -14,7 +14,7 @@ export class AuthService {
     private operater: Operater | undefined;
     private token: string | null | undefined;
 
-    constructor(private ds: DataService, private router: Router) {
+    constructor(private ds: ApiService, private router: Router) {
     }
 
     login(cred: { id: string, pass: string }) {
@@ -77,8 +77,8 @@ export class AuthService {
             });
         }
 
-        // @ts-ignore
-        return this.ds.getJa().pipe(map((r: { status: number, user?: Operater }) => {
+
+        return this.ds.getJa().pipe(map(r => {
             if (r.status == 200) {
                 this.operater = r.user;
                 this.authChange.next(true);

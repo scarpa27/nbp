@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {PloviloService} from "../../servisi/plovilo.service";
+import {ResponseService} from "../../servisi/response.service";
 import {AuthService} from "../../servisi/auth.service";
 
 @Component({
@@ -13,7 +13,7 @@ export class AdminComponent implements OnInit {
 
 
 
-  constructor(public ps: PloviloService, public auth: AuthService) { }
+  constructor(public ps: ResponseService, public auth: AuthService) { }
 
   ngOnInit(): void {
 

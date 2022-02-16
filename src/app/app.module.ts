@@ -9,8 +9,8 @@ import {PocetakComponent} from "./komponente/home/pocetak.component";
 import {SorterPipe} from './pipe/sorter.pipe';
 import {FilterPipe} from "./pipe/filter.pipe";
 import {PlovilaComponent} from './komponente/view/plovila.component';
-import {PloviloService} from "./servisi/plovilo.service";
-import {DataService} from "./servisi/data.service";
+import {ResponseService} from "./servisi/response.service";
+import {ApiService} from "./servisi/api.service";
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from "@angular/common/http";
 import {HeaderComponent} from './komponente/header/header.component';
 import {PloviloComponent} from './komponente/view/plovilo.component';
@@ -59,8 +59,8 @@ import { NewUserComponent } from './komponente/admin/new-user/new-user.component
         ReactiveFormsModule
     ],
     providers: [
-        PloviloService,
-        DataService,
+        ResponseService,
+        ApiService,
         HttpClient,
         AuthService,
         AuthGuard,

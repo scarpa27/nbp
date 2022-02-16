@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Plovilo} from "../../klase/plovilo.model";
-import {BehaviorSubject} from "rxjs";
-import {PloviloService} from "../../servisi/plovilo.service";
+import {ResponseService} from "../../servisi/response.service";
+import {PointService} from "../../servisi/point.service";
 
 
 @Component({
@@ -12,20 +12,17 @@ import {PloviloService} from "../../servisi/plovilo.service";
 export class PlovilaComponent implements OnInit {
 
     plovila: Plovilo[] = [];
-    subscription: BehaviorSubject<Plovilo[]> = new BehaviorSubject<Plovilo[]>(this.plovila);
 
     stupac: string = "id";
     obrnuto: boolean = false;
     f: string[] = ["", "", "", ""];
 
 
-    constructor(public servis: PloviloService) {
+    constructor(private servis: ResponseService, public goto: PointService) {
     }
 
     ngOnInit(): void {
-        this.subscription = this.servis.getPlovilaAPI();
-
-        this.subscription.subscribe(
+        this.servis.getPlovilaAPI().subscribe(
             r => this.plovila = r
         );
     }

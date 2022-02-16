@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {Plovilo} from "../../klase/plovilo.model";
-import {PloviloService} from "../../servisi/plovilo.service";
+import {ResponseService} from "../../servisi/response.service";
 import {Drzava} from "../../klase/drzava.model";
 import {Vlasnik} from "../../klase/vlasnik.model";
+import {PointService} from "../../servisi/point.service";
 
 @Component({
     selector: 'app-ae-plovilo',
@@ -26,7 +27,8 @@ export class AePloviloComponent implements OnInit {
     constructor(
         private route: ActivatedRoute,
         // private formBuilder: FormBuilder,
-        public servis: PloviloService
+        private servis: ResponseService,
+        public goto: PointService
     ) {
     }
 
@@ -48,15 +50,12 @@ export class AePloviloComponent implements OnInit {
         }
     }
 
-    saveChange(): void {
+    saveChange() {
         this.servis.putPloviloAPI(this.editDrzava_id, this.editVlasnik_id, this.editNaziv, this._id);
-
     }
 
-    saveAsNew(): void {
-        this.servis.postPloviloAPI(this.editDrzava_id, this.editVlasnik_id, this.editNaziv);
-
-    }
+    saveAsNew() {
+        this.servis.postPloviloAPI(this.editDrzava_id, this.editVlasnik_id, this.editNaziv);    }
 
     listaVlasnika(): void {
         this.servis.getVlasniciAPI()

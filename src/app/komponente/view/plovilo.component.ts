@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Plovilo} from "../../klase/plovilo.model";
 import {BehaviorSubject} from "rxjs";
-import {PloviloService} from "../../servisi/plovilo.service";
+import {ResponseService} from "../../servisi/response.service";
 import {ActivatedRoute} from "@angular/router";
+import {PointService} from "../../servisi/point.service";
 
 @Component({
     selector: 'app-plovilo',
@@ -14,14 +15,13 @@ export class PloviloComponent implements OnInit {
     plovilo: Plovilo = new Plovilo();
     subscription: BehaviorSubject<Plovilo> = new BehaviorSubject<Plovilo>(this.plovilo);
 
-    constructor(public servis: PloviloService, private route: ActivatedRoute) {
+    constructor(private servis: ResponseService, private route: ActivatedRoute, public goto: PointService) {
     }
 
     ngOnInit(): void {
-        this.subscription = this.servis.getPloviloAPI(this.route.snapshot.params['id']);
-
-        this.subscription.subscribe(
+        this.servis.getPloviloAPI(this.route.snapshot.params['id'])
+            .subscribe(
             r => this.plovilo = r
-        );
+            );
     }
 }

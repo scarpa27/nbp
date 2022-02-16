@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {PloviloService} from "../../../servisi/plovilo.service";
+import {ResponseService} from "../../../servisi/response.service";
+import {Plovilo} from "../../../klase/plovilo.model";
+import {Vlasnik} from "../../../klase/vlasnik.model";
+import {Drzava} from "../../../klase/drzava.model";
 
 @Component({
     selector: 'app-brisanje',
@@ -8,67 +11,50 @@ import {PloviloService} from "../../../servisi/plovilo.service";
 })
 export class BrisanjeComponent implements OnInit {
 
+    plovila: Plovilo[] = []
+    vlasnici: Vlasnik[] = [];
+    drzave: Drzava[] = [];
+
     delPlovilo_id: number = 0;
     delVlasnik_id: number = 0;
     delDrzava_id: number = 0;
 
-    constructor(public ps: PloviloService) {
+    constructor(public ps: ResponseService) {
     }
 
     ngOnInit(): void {
-        this.plovila();
-        this.vlasnici();
-        this.drzave();
+        this.getplovila();
+        this.getvlasnici();
+        this.getdrzave();
     }
 
-    plovila() {
-        this.ps.getPlovilaAPI().subscribe(a => {
-            // @ts-ignore
-            this.ps.plovila = a["resp"][0];
-            this.ps.plovilaSubject.next(this.ps.plovila);
-            this.ps.plovilaSubject.subscribe(b => {
-                this.ps.plovila = b;
-            });
-        });
+    getplovila() {
+        this.ps.getPlovilaAPI().subscribe(a => this.plovila = a);
     }
 
     delPlovilo() {
         this.ps.deletePloviloAPI(this.delPlovilo_id);
-        this.plovila();
+        this.getplovila();
         this.delPlovilo_id = 0;
     }
 
-    vlasnici() {
-        this.ps.getVlasniciAPI().subscribe(a => {
-            // @ts-ignore
-            this.ps.vlasnici = a["resp"];
-            this.ps.vlasniciSubject.next(this.ps.vlasnici);
-            this.ps.vlasniciSubject.subscribe(b => {
-                this.ps.vlasnici = b;
-            });
-        });
+    getvlasnici() {
+        this.ps.getVlasniciAPI().subscribe(a => this.vlasnici = a);
     }
 
     delVlasnik() {
         this.ps.deleteVlasnikAPI(this.delVlasnik_id);
-        this.vlasnici();
+        this.getvlasnici();
         this.delVlasnik_id = 0;
     }
 
-    drzave() {
-        this.ps.getDrzaveAPI().subscribe(a => {
-            // @ts-ignore
-            this.ps.drzave = a["resp"];
-            this.ps.drzaveSubject.next(this.ps.drzave);
-            this.ps.drzaveSubject.subscribe(b => {
-                this.ps.drzave = b;
-            });
-        });
+    getdrzave() {
+        this.ps.getDrzaveAPI().subscribe(a => this.drzave = a);
     }
 
     delDrzava() {
         this.ps.deleteDrzavaAPI(this.delDrzava_id);
-        this.drzave();
+        this.getdrzave();
         this.delDrzava_id = 0;
     }
 

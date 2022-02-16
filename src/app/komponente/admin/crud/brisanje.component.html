@@ -5,7 +5,7 @@
     <div class="col-md-4 offset-md-2">
         <select [(ngModel)]="delPlovilo_id" >
             <option value="0" disabled>Odaberi plovilo za brisanje</option>
-            <option *ngFor="let plovilo of ps.plovila"
+            <option *ngFor="let plovilo of plovila"
                     [ngValue]="plovilo.id">{{plovilo.naziv}}  - {{plovilo.vlasnik}}</option>
         </select>
     </div>
@@ -18,7 +18,7 @@
     <div class="col-md-4 offset-md-2">
         <select [(ngModel)]="delVlasnik_id" >
             <option value="0" disabled>Odaberi mušteriju za brisanje</option>
-            <option *ngFor="let vlasnik of ps.vlasnici"
+            <option *ngFor="let vlasnik of vlasnici"
                     [ngValue]="vlasnik.id">{{vlasnik.ime}} {{vlasnik.prezime}}  - {{vlasnik.oib}}</option>
         </select>
     </div>
@@ -31,7 +31,7 @@
     <div class="col-md-4 offset-md-2">
         <select [(ngModel)]="delDrzava_id" >
             <option value="0" disabled>Odaberi državu za brisanje</option>
-            <option *ngFor="let drzava of ps.drzave"
+            <option *ngFor="let drzava of drzave"
                     [ngValue]="drzava.id">{{drzava.id}} - {{drzava.drzava}}</option>
         </select>
     </div>

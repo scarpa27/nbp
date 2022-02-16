@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {PloviloService} from "../../servisi/plovilo.service";
+import {ResponseService} from "../../servisi/response.service";
 import {Prognoza} from "../../klase/prognoza.model";
 import {BehaviorSubject} from "rxjs";
+import {PointService} from "../../servisi/point.service";
 
 @Component({
   selector: 'app-prognoza',
@@ -13,7 +14,7 @@ export class PrognozaComponent implements OnInit {
     prognoza: Prognoza = new Prognoza();
     supscription: BehaviorSubject<Prognoza> = new BehaviorSubject<Prognoza>(this.prognoza);
 
-  constructor(public ps: PloviloService) { }
+  constructor(private ps: ResponseService, public goto: PointService) { }
 
   ngOnInit(): void {
       this.supscription=this.ps.getPrognozaAPI();

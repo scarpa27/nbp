@@ -2,11 +2,12 @@ import {Injectable} from '@angular/core';
 import {environment} from "../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 import {join} from '@fireflysemantics/join';
+import {Observable} from "rxjs";
 
 @Injectable({
     providedIn: 'root'
 })
-export class DataService {
+export class ApiService {
     readonly apiRoot = join(environment.API_URL, '/api');
     readonly authRoot = join(environment.API_URL, '/auth');
 
@@ -14,11 +15,11 @@ export class DataService {
     }
 
 
-    getPlovila() {
+    getPlovila(): Observable<any> {
         return this.http.get(join(this.apiRoot, "plovilo"));
     }
 
-    getPlovilo(id: number) {
+    getPlovilo(id: number): Observable<any> {
         return this.http.get(join(this.apiRoot, "plovilo", id.toString()));
     }
 
@@ -31,7 +32,11 @@ export class DataService {
     }
 
     putPlovilo(_drzava_reg_id: number, _musterija_id: number, _naziv: string, _id: number) {
-        return this.http.put(join(this.apiRoot, "plovilo", _id.toString()), {drzava_reg_id: _drzava_reg_id, musterija_id: _musterija_id, naziv: _naziv, id: _id
+        return this.http.put(join(this.apiRoot, "plovilo", _id.toString()), {
+            drzava_reg_id: _drzava_reg_id,
+            musterija_id: _musterija_id,
+            naziv: _naziv,
+            id: _id
         });
     }
 
@@ -40,20 +45,23 @@ export class DataService {
     }
 
 
-    getDrzave() {
+    getDrzave(): Observable<any> {
         return this.http.get(join(this.apiRoot, "drzava"));
     }
 
-    getDrzava(_id: number) {
+    getDrzava(_id: number): Observable<any> {
         return this.http.get(join(this.apiRoot, "drzava", _id.toString()))
     }
 
     postDrzava(_drzava: string) {
-        return this.http.post(join(this.apiRoot, "drzava"), {drzava: _drzava});
+        return this.http.post(join(this.apiRoot, "drzava"), {
+            drzava: _drzava});
     }
 
     putDrzava(_id: number, _naziv: string) {
-        return this.http.put(join(this.apiRoot, "drzava", _id.toString()), {id: _id, drzava: _naziv});
+        return this.http.put(join(this.apiRoot, "drzava", _id.toString()), {
+            id: _id,
+            drzava: _naziv});
     }
 
     deleteDrzava(_id: number) {
@@ -61,16 +69,18 @@ export class DataService {
     }
 
 
-    getMjesta() {
+    getMjesta(): Observable<any> {
         return this.http.get(join(this.apiRoot, "mjesto"))
     }
 
-    getMjesto(_id: number) {
+    getMjesto(_id: number): Observable<any> {
         return this.http.get(join(this.apiRoot, "mjesto", _id.toString()))
     }
 
     postMjesto(_naziv: string, _drzava_id: number) {
-        return this.http.post(join(this.apiRoot, "mjesto"), {naziv: _naziv, drzava_id: _drzava_id});
+        return this.http.post(join(this.apiRoot, "mjesto"), {
+            naziv: _naziv,
+            drzava_id: _drzava_id});
     }
 
     putMjesto(_naziv: string, _drzava_id: number, _id: number) {
@@ -86,11 +96,11 @@ export class DataService {
     }
 
 
-    getAdrese() {
+    getAdrese(): Observable<any> {
         return this.http.get(join(this.apiRoot, "adresa"));
     }
 
-    getAdresa(_id: number) {
+    getAdresa(_id: number): Observable<any> {
         return this.http.get(join(this.apiRoot, "adresa", _id.toString()));
     }
 
@@ -111,11 +121,11 @@ export class DataService {
     }
 
 
-    getMusterije() {
+    getMusterije(): Observable<any> {
         return this.http.get(join(this.apiRoot, "vlasnik"));
     }
 
-    getMusterija(_id: number) {
+    getMusterija(_id: number): Observable<any> {
         return this.http.get(join(this.apiRoot, "vlasnik", _id.toString()));
     }
 
@@ -141,13 +151,15 @@ export class DataService {
         return this.http.delete(join(this.apiRoot, "vlasnik", _id.toString()));
     }
 
-    getOvlasti() {
+    getOvlasti(): Observable<any> {
         return this.http.get(join(this.apiRoot, "ovlast"));
     }
 
 
     postCred(_id: string, _pass: string) {
-        return this.http.post(join(this.authRoot), {id: _id, pass: _pass});
+        return this.http.post(join(this.authRoot), {
+            id: _id,
+            pass: _pass});
     }
 
     regCred(cred: {ime: string, prezime: string, ovlast_id: number, oib: string, sifra: string}) {
@@ -155,11 +167,11 @@ export class DataService {
     }
 
 
-    getJa() {
+    getJa(): Observable<any> {
         return this.http.get(join(this.apiRoot,"ja"));
     }
 
-    getPrognoza() {
+    getPrognoza(): Observable<any> {
         return this.http.get("https://api.openweathermap.org/data/2.5/weather?q=Makarska,hr&APPID=70de1ec8044ff7c93174921dffc94fd5&units=metric&lang=hr");
     }
 

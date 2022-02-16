@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Drzava} from "../../../klase/drzava.model";
 import {ActivatedRoute} from "@angular/router";
-import {PloviloService} from "../../../servisi/plovilo.service";
+import {ResponseService} from "../../../servisi/response.service";
 import {Mjesto} from "../../../klase/mjesto.model";
+import {PointService} from "../../../servisi/point.service";
 
 @Component({
     selector: 'app-ae-mjesto',
@@ -20,7 +21,8 @@ export class AeMjestoComponent implements OnInit {
 
     constructor(
         private route: ActivatedRoute,
-        public servis: PloviloService
+        private servis: ResponseService,
+        public goto: PointService
     ) {
     }
 

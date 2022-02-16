@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {PloviloService} from "../../../servisi/plovilo.service";
+import {ResponseService} from "../../../servisi/response.service";
 import {Drzava} from "../../../klase/drzava.model";
 
 @Component({
@@ -17,7 +17,7 @@ export class AeDrzavaComponent implements OnInit {
 
     constructor(
         private route: ActivatedRoute,
-        private servis: PloviloService
+        private servis: ResponseService
     ) {
     }
 
